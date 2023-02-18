@@ -1,10 +1,18 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
 import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
 import "./App.css";
 
 const App = () => {
+    const Heading = styled.h1`
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        color: #8b005d;
+    `;
     const [courseGoals, setCourseGoals] = useState([
         { text: "Do all exercises!", id: "g1" },
         { text: "Finish the course!", id: "g2" },
@@ -38,6 +46,7 @@ const App = () => {
 
     return (
         <div>
+            <Heading>To Do List</Heading>
             <section id='goal-form'>
                 <CourseInput onAddGoal={addGoalHandler} />
             </section>
