@@ -48,6 +48,7 @@ const CourseInput = (props) => {
             return;
         }
         props.onAddGoal(enteredValue);
+        setEnteredValue("");
     };
 
     return (
@@ -57,6 +58,7 @@ const CourseInput = (props) => {
                 <input
                     type='text'
                     onChange={goalInputChangeHandler}
+                    value={enteredValue}
                 />
             </div>
             <Button type='submit'>Add Goal</Button>
